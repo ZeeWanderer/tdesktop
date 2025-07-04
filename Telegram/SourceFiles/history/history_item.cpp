@@ -1794,6 +1794,8 @@ bool HistoryItem::skipNotification() const {
 		if (forwarded->imported) {
 			return true;
 		}
+	} else if (notificationThread()->muted() && mentionsMe()) {
+		return true;
 	} else if (canLookupMessageAuthor()) {
 		return true;
 	}
