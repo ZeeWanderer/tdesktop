@@ -6351,6 +6351,7 @@ void HistoryItem::applyAction(const MTPMessageAction &action) {
 			fields.stargiftId = gift->id;
 			fields.starsToUpgrade = gift->starsToUpgrade;
 			fields.document = gift->document;
+			fields.stargiftReleasedBy = gift->releasedBy;
 			fields.limitedCount = gift->limitedCount;
 			fields.limitedLeft = gift->limitedLeft;
 			fields.count = gift->stars;
@@ -6386,6 +6387,7 @@ void HistoryItem::applyAction(const MTPMessageAction &action) {
 		if (auto gift = Api::FromTL(&history()->session(), data.vgift())) {
 			fields.stargiftId = gift->id;
 			fields.document = gift->document;
+			fields.stargiftReleasedBy = gift->releasedBy;
 			fields.limitedCount = gift->limitedCount;
 			fields.limitedLeft = gift->limitedLeft;
 			fields.count = gift->stars;
